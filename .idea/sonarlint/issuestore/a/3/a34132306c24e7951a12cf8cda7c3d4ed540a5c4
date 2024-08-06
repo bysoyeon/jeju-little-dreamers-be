@@ -1,0 +1,17 @@
+
+	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ë»âÊ8Ã¾“©’2J$0d110831-068c-4b4d-a026-a873b7974a24
+—	java:S116"URename this field "created_at" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(† ¬Ì8Ğ¾“©’2J$196f3475-fc46-4076-bb5c-5b3bc28d6c48
+œ	java:S116"URename this field "updated_at" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûëùÿÿÿÿ8Ğ¾“©’2J$7a7093d6-7173-436a-96ae-f103fb84ab1d
+—	java:S116"URename this field "deleted_at" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Å˜ëó8Ğ¾“©’2J$ec9c1536-6077-440b-81f7-5c4805d3ed2f
+q
+java:S1068")Remove this unused "grade" private field.(›÷çÀüÿÿÿÿ8Ù¾“©’2J$35faa7b0-c24c-40a8-aa84-b442c2e67d35
+s
+java:S1068"+Remove this unused "content" private field.(ÃÇÿôøÿÿÿÿ8Ù¾“©’2J$c9f46735-5168-497e-9e4f-5e6b5ce0e591
+l
+java:S1068")Remove this unused "image" private field.(ÄŸ²ä8Ú¾“©’2J$fe965a5a-9cee-4570-9a7f-b8d3aad779d8
+q
+java:S1068".Remove this unused "created_at" private field.(† ¬Ì8Ú¾“©’2J$4e110984-2339-4db4-881a-b4f4966a3f23
+v
+java:S1068".Remove this unused "updated_at" private field.(ûëùÿÿÿÿ8Ú¾“©’2J$67291df5-cfce-40c5-936d-41e0f5ed43fe
+q
+java:S1068".Remove this unused "deleted_at" private field.(Å˜ëó8Ú¾“©’2J$ab2b051b-7cc2-4cd7-9ffd-4b4b174e4eb5

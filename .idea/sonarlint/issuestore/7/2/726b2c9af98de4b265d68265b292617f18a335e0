@@ -1,0 +1,7 @@
+
+	java:S101	"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Şš†¾ûÿÿÿÿJ$5805aaf0-b374-402c-83c7-db782ce4a983
+Ÿ	java:S116"XRename this field "profile_image" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®‹¢Šùÿÿÿÿ8ó½ş¨’2J$978635ce-e738-4f3f-995e-8e84a04d4498
+t
+java:S1068",Remove this unused "nickname" private field.(¥šÓßÿÿÿÿÿ8‘“ú¨’2J$b09707a8-fb5f-4a5b-be19-3e19d9f636e3
+y
+java:S1068"1Remove this unused "profile_image" private field.(®‹¢Šùÿÿÿÿ8÷½ş¨’2J$2d3e3ba7-a4d6-4ad6-b0fd-f01f1d227495
