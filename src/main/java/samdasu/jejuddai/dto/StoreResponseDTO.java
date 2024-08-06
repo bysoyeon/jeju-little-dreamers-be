@@ -5,9 +5,9 @@ import lombok.Data;
 
 @Data
 @Builder
-public class ResponseDTO {
+public class StoreResponseDTO {
 
-    //클래스명 바꿔야 할 듯ㅠㅠ StoreResponseDTO
+
     private Long id; // 가게 아이디
 
     private String name; // 가게명

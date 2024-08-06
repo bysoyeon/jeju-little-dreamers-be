@@ -9,5 +9,4 @@ import java.util.List;
 public interface StoreRepository extends JpaRepository<store, Long> {
     List<store> findByCategoryAndLatitudeBetweenAndLongitudeBetween(String category, double latStart, double latEnd, double lonStart, double lonEnd);
 
-
 }
