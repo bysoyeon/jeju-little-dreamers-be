@@ -1,5 +1,5 @@
 # Build stage
-FROM gradle:7.5.1-jdk17 AS build
+FROM krmp-d2hub-idock.9rum.cc/goorm/gradle:7.5.1-jdk17 AS build
 
 WORKDIR /app
 
@@ -13,7 +13,7 @@ RUN ./gradlew build -x test
 
 
 # Run stage
-FROM openjdk:17-jdk-slim
+FROM krmp-d2hub-idock.9rum.cc/goorm/openjdk:17-jdk-slim
 
 WORKDIR /app
 
