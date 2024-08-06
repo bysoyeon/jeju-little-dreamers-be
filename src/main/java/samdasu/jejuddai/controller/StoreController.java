@@ -31,13 +31,13 @@ public class StoreController {
 
     // 스토어 메뉴 정보 전달
     @GetMapping("/menu")
-    public List<Menu> getMenusByStoreId(@RequestParam String storeId) {
+    public List<Menu> getMenusByStoreId(@RequestParam(value = "storeId") String storeId) {
         return storeService.getMenuByStoreId(storeId);
     }
 
     // 스토어 리뷰 정보 전달
     @GetMapping("/review")
-    public List<Review> getReviewsByStoreId(@RequestParam String storeId) {
+    public List<Review> getReviewsByStoreId(@RequestParam(value = "storeId") String storeId) {
         return storeService.getReviewByStoreId(storeId);
     }
 

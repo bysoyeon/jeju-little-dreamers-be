@@ -16,7 +16,9 @@ public class StoreService {
 
     @Autowired
     private StoreRepository storeRepository;
+    @Autowired
     private MenuRepository menuRepository;
+    @Autowired
     private ReviewRepository reviewRepository;
 
     private static final double LATITUDE_VALUE = 1 / 109.958489129649955;
