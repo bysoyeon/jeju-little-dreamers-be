@@ -2,10 +2,12 @@ package samdasu.jejuddai.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 import samdasu.jejuddai.dto.StoreResponseDTO;
 
 @Entity
 @Getter
+@Setter
 @Table(name = "store")
 public class Store {
     @Id

@@ -20,5 +20,7 @@ public class User {
     private Long id;
     private Long kakaoId;
     private String nickname;
+
     private String profileImageUrl;
+
 }

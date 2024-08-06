@@ -4,10 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import samdasu.jejuddai.dto.ReviewDTO;
 import samdasu.jejuddai.entity.Review;
 import samdasu.jejuddai.service.ReviewService;
 
+import java.io.IOException;
 import java.util.*;
 
 @RestController
@@ -17,75 +19,75 @@ public class ReviewController {
     @Autowired
     private ReviewService reviewService;
 
-    // 리뷰 작성
-    @PostMapping("/edit")
-    public ResponseEntity<Map<String, Object>> newReview(@RequestBody ReviewDTO reviewDTO) {
-        Map<String, Object> response = new HashMap<>();
+    // 신규 리뷰 작성 + 이미지
+    @PostMapping("/upload")
+    public ResponseEntity<ReviewDTO> uploadReview(
+            @RequestParam("user_id") Long userId,
+            @RequestParam("store_id") String storeId,
+            @RequestParam("content") String content,
+            @RequestParam("grade") int grade,
+            @RequestParam(value = "image1", required = false) MultipartFile image1,
+            @RequestParam(value = "image2", required = false) MultipartFile image2,
+            @RequestParam(value = "image3", required = false) MultipartFile image3) {
+        try {
+            ReviewDTO reviewDTO = ReviewDTO.builder()
+                    .user_id(userId)
+                    .store_id(storeId)
+                    .content(content)
+                    .grade(grade)
+                    .build();
 
-        boolean newReview = reviewService.insertReview(reviewDTO);
-
-        if (newReview) {
-            response.put("status", "SUCCESS");
-            response.put("message", "리뷰가 등록 되었습니다.");
-            return new ResponseEntity<>(response, HttpStatus.OK);
-        } else {
-            response.put("status", "ERROR");
-            response.put("message", "리뷰 등록에 실패했습니다.");
-            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+            ReviewDTO savedReview = reviewService.saveReview(reviewDTO, image1, image2, image3);
+            return new ResponseEntity<>(savedReview, HttpStatus.OK);
+        } catch (IOException e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    // 리뷰 조회
+    // 리뷰 조회 (업체별)
     @GetMapping
     public ResponseEntity<List<Review>> getAllReviews() {
         List<Review> reviews = reviewService.getAllReviews();
         return new ResponseEntity<>(reviews, HttpStatus.OK);
     }
 
+    // 특정 리뷰 조회
     @GetMapping("/{id}")
-    public ResponseEntity<Review> getReviewById(@PathVariable Long id) {
-        Optional<Review> review = reviewService.getReviewById(id);
-        return review.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
+    public ResponseEntity<ReviewDTO> getReview(@PathVariable Long id) {
+        Optional<ReviewDTO> reviewDTO = reviewService.getReviewById(id);
+        return reviewDTO.map(dto -> new ResponseEntity<>(dto, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
 
     // 리뷰 수정
-    // 리뷰 수정
     @PutMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> updateReview(@PathVariable Long id, @RequestBody ReviewDTO reviewDTO) {
-        Map<String, Object> response = new HashMap<>();
+    public ResponseEntity<ReviewDTO> updateReview(
+            @PathVariable Long id,
+            @RequestParam("content") String content,
+            @RequestParam("grade") int grade,
+            @RequestParam(value = "image1", required = false) MultipartFile image1,
+            @RequestParam(value = "image2", required = false) MultipartFile image2,
+            @RequestParam(value = "image3", required = false) MultipartFile image3) {
+        try {
+            ReviewDTO reviewDTO = ReviewDTO.builder()
+                    .content(content)
+                    .grade(grade)
+                    .build();
 
-        boolean updated = reviewService.updateReview(id, reviewDTO);
-
-        if (updated) {
-            response.put("status", "SUCCESS");
-            response.put("message", "리뷰가 수정되었습니다.");
-            return new ResponseEntity<>(response, HttpStatus.OK);
-        } else {
-            response.put("status", "ERROR");
-            response.put("message", "리뷰 수정에 실패했습니다.");
-            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+            ReviewDTO updatedReview = reviewService.updateReview(id, reviewDTO, image1, image2, image3);
+            return new ResponseEntity<>(updatedReview, HttpStatus.OK);
+        } catch (IOException e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
 
     // 리뷰 삭제
     @DeleteMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> deleteReview(@PathVariable Long id) {
-        Map<String, Object> response = new HashMap<>();
-
-        boolean deleted = reviewService.deleteReview(id);
-
-        if (deleted) {
-            response.put("status", "SUCCESS");
-            response.put("message", "리뷰가 삭제되었습니다.");
-            return new ResponseEntity<>(response, HttpStatus.OK);
-        } else {
-            response.put("status", "ERROR");
-            response.put("message", "리뷰 삭제에 실패했습니다.");
-            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public ResponseEntity<Void> deleteReview(@PathVariable Long id) {
+        reviewService.deleteReview(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
 
 }
