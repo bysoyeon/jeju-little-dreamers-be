@@ -4,14 +4,10 @@ FROM gradle:7.5.1-jdk17 AS build
 WORKDIR /app
 
 # Copy all necessary files for the build
-COPY gradlew /app/
-COPY build.gradle /app/
-COPY settings.gradle /app/
-COPY gradle /app/gradle
-COPY src /app/src
+COPY . .
 
 # Build the application
-RUN
+RUN ./gradlew build -x test
 
 
 # Run stage
