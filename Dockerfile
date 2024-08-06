@@ -6,11 +6,7 @@ WORKDIR /app
 RUN echo "systemProp.http.proxyHost=krmp-proxy.9rum.cc\nsystemProp.http.proxyPort=3128\nsystemProp.https.proxyHost=krmp-proxy.9rum.cc\nsystemProp.https.proxyPort=3128" > /root/.gradle/gradle.properties
 
 # Copy all necessary files for the build
-COPY gradlew /app/
-COPY build.gradle /app/
-COPY settings.gradle /app/
-COPY gradle /app/gradle
-COPY src /app/src
+COPY . .
 
 # Build the application
 RUN ./gradlew build -x test
