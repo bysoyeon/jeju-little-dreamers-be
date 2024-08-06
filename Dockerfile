@@ -25,7 +25,7 @@ FROM krmp-d2hub-idock.9rum.cc/goorm/openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the jar file from the build stage
-COPY --from=build /app/build/libs/*.jar app.jar
+COPY --from=build /app/build/libs/*.jar /app/app.jar
 
 # Expose port 8080
 EXPOSE 8080
