@@ -16,6 +16,5 @@ public class ReviewResponseDTO {
     private int grade; // 등급
     private String content; // 리뷰 내용
     private String image;// 리뷰 이미지
-    private LocalDateTime created_at; // 최초 작성 날짜 - 수정날짜만 보내는건?
     private LocalDateTime updated_at; // 최근 수정 날짜
 }

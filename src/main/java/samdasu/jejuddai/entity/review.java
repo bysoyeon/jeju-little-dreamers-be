@@ -1,6 +1,7 @@
 package samdasu.jejuddai.entity;
 
 import jakarta.persistence.*;
+import samdasu.jejuddai.dto.ReviewResponseDTO;
 
 import java.time.LocalDateTime;
 
@@ -25,4 +26,18 @@ public class review {
     private LocalDateTime created_at;
     private LocalDateTime updated_at;
     private LocalDateTime deleted_at;
+
+    public ReviewResponseDTO toResponseDTO() {
+        return ReviewResponseDTO.builder()
+                .id(this.id)
+                .user_id(this.user.getId())
+                .user_nickname(this.user.getNickname())
+                .store_id(this.store.getId())
+                .store_name(this.store.getName())
+                .grade(this.grade)
+                .content(this.content)
+                .image(this.image)
+                .updated_at(this.updated_at)
+                .build();
+    }
 }

@@ -1,29 +1,38 @@
 package samdasu.jejuddai.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import samdasu.jejuddai.dto.MenuResponseDTO;
 
 @Entity
+@Table(name = "menu")
+@Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class menu {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    private Long id;
+    private Long id; // 메뉴 아이디
 
     @ManyToOne
     @JoinColumn(name="store_id")
-    private store store;
+    private store store; // 판매 가게 아이디
 
-    private String name;
-    private int price;
-//
-//    public MenuResponseDTO toResponseDTO() {
-//        return MenuResponseDTO.builder()
-//                    .id(this.id)
-//                    .store_id(this.store.getId())
-//                    .name(this.name)
-//                    .price(this.price)
-//                    .build();
-//    }
+    private String name; // 메뉴 이름
+    private int price; // 메뉴 금액
+
+    public MenuResponseDTO toResponseDTO() {
+        return MenuResponseDTO.builder()
+                    .id(this.id) // 메뉴 아이디
+                    .name(this.name) // 메뉴 이름
+                    .price(this.price) // 메뉴 가격
+                    .store_id(this.store.getId()) // 가게 아이디
+                    .store_name(this.store.getName()) // 가게 이름
+                    .build();
+    }
 }
