@@ -15,20 +15,9 @@ COPY . .
 
 RUN gradle wrapper
 
-# Build the application
-
-RUN ./gradlew build -x test
-
-# Run stage
-FROM krmp-d2hub-idock.9rum.cc/goorm/openjdk:17-jdk-slim
-
-WORKDIR /app
-
-# Copy the jar file from the build stage
-# COPY --from=build /app/build/libs/*.jar /app/app.jar
 
 # Expose port 8080
-# EXPOSE 8080
+EXPOSE 8080
 
 # Command to run the application
-# ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+ENTRYPOINT ["java", "-jar", "/app/build/libs/jejuddai-0.0.1-SNAPSHOT"]
