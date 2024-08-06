@@ -1,0 +1,11 @@
+
+z
+java:S1611$"2Remove the parentheses around the "csrf" parameter(ª»Çşÿÿÿÿ8±–±’2J$f6cd90ab-0f7b-40e1-81f2-1e3a58bb82fd
+z
+java:S1611%"7Remove the parentheses around the "authorize" parameter(–²ÇÁ8³–±’2J$263d0268-9c7d-4e43-8a9b-185eded35a16
+}
+java:S1611)"5Remove the parentheses around the "session" parameter(Î‹Öëıÿÿÿÿ8´–±’2J$dd2966dc-ad44-46ec-b0db-de3d30596761
+
+java:S1612*"LReplace this lambda with method reference 'AbstractHttpConfigurer::disable'.(§¡øº8ûëŞ±’2J$de03b630-bd7b-4e19-8cdf-47c443b25370
+
+java:S1612+"LReplace this lambda with method reference 'AbstractHttpConfigurer::disable'.(‘ÏÃO8üëŞ±’2J$071d7dd1-5938-446a-b618-1d20b5fd3c13

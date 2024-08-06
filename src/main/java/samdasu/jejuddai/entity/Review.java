@@ -40,7 +40,6 @@ public class Review {
                 .user_id(this.user.getId())
                 .user_nickname(this.user.getNickname())
                 .store_id(this.store.getId())
-                .store_name(this.store.getName())
                 .grade(this.grade)
                 .content(this.content)
                 .image(this.image)

@@ -1,7 +1,2 @@
 
-	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ãÄîä8­Ë«’2J$b1295960-ac4d-43ef-8ef8-09d0246592db
-ƒ	java:S125"<This block of commented-out lines of code should be removed.(öØç–úÿÿÿÿ8ÛÌ˜¬’2J$efeec5f2-c512-4667-95fc-fb7ce2bd8fd5
-k
-java:S1068"(Remove this unused "name" private field.(Ë¥¼8ŞÌ˜¬’2J$049f55f6-bf86-44df-b45e-5d183c018e4d
-k
-java:S1068")Remove this unused "price" private field.(ˆÑ€(8ŞÌ˜¬’2J$073d1268-8ff2-46ff-83b1-006d655b1704
+	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ãÄîä8­Ë«’2J$302ab040-726d-40dd-843f-969ab73a2b63

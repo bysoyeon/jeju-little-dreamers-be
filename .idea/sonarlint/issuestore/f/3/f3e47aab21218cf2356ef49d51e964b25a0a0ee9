@@ -1,16 +1,2 @@
 
-	java:S101	"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÕòåÚşÿÿÿÿJ$a4916cd3-0c13-419f-9901-40c8b256a2e6
-k
-java:S1068"(Remove this unused "name" private field.(Ë¥¼8Š™ø¨’2J$40193914-508a-4a7a-9600-1286e004c59d
-s
-java:S1068"+Remove this unused "address" private field.(÷§ùÿÿÿÿ8¹Ì³«’2J$d27401c2-ad37-4084-bc62-303c93fee676
-l
-java:S1068")Remove this unused "phone" private field.(À†½´8‹™ø¨’2J$473fc4d3-7750-44ca-87fe-9ed48a0c1a08
-t
-java:S1068",Remove this unused "category" private field.(‘Ñ¤’üÿÿÿÿ8‹™ø¨’2J$e444f521-318a-432f-a98f-2472413f5af5
-t
-java:S1068",Remove this unused "latitude" private field.(Ù…‚ùÿÿÿÿ8¹Ì³«’2J$d7424ea8-2739-46f7-9187-5c003db1bd0e
-p
-java:S1068"-Remove this unused "longitude" private field.(®Á–ƒ8¹Ì³«’2J$82328c6d-9419-4e83-a220-ace4c849a0cc
-l
-java:S1068")Remove this unused "image" private field.(Êº¼¨8‹™ø¨’2J$b4908ce8-b6f3-4da2-a46b-0fb4d676e0d4
+	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÕòåÚşÿÿÿÿJ$4797174d-75f7-4289-8c2a-7647f906f5aa
