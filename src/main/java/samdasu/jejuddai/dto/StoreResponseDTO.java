@@ -8,7 +8,7 @@ import lombok.Data;
 public class StoreResponseDTO {
 
 
-    private Long id; // 가게 아이디
+    private String id; // 가게 아이디
 
     private String name; // 가게명
     

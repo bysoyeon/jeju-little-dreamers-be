@@ -1,12 +1,19 @@
 package samdasu.jejuddai.entity;
 
 import jakarta.persistence.*;
-import samdasu.jejuddai.dto.ReviewResponseDTO;
+import lombok.*;
+import samdasu.jejuddai.dto.ReviewDTO;
 
 import java.time.LocalDateTime;
 
 @Entity
-public class review {
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "review")
+public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,11 +21,11 @@ public class review {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private user user;
+    private User user;
 
     @ManyToOne
     @JoinColumn(name = "store_id")
-    private store store;
+    private Store store;
 
     private int grade;
     private String content;
@@ -27,8 +34,8 @@ public class review {
     private LocalDateTime updated_at;
     private LocalDateTime deleted_at;
 
-    public ReviewResponseDTO toResponseDTO() {
-        return ReviewResponseDTO.builder()
+    public ReviewDTO toResponseDTO() {
+        return ReviewDTO.builder()
                 .id(this.id)
                 .user_id(this.user.getId())
                 .user_nickname(this.user.getNickname())

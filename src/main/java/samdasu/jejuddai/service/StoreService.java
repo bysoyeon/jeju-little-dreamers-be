@@ -2,9 +2,9 @@ package samdasu.jejuddai.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import samdasu.jejuddai.entity.menu;
-import samdasu.jejuddai.entity.review;
-import samdasu.jejuddai.entity.store;
+import samdasu.jejuddai.entity.Menu;
+import samdasu.jejuddai.entity.Review;
+import samdasu.jejuddai.entity.Store;
 import samdasu.jejuddai.repository.MenuRepository;
 import samdasu.jejuddai.repository.ReviewRepository;
 import samdasu.jejuddai.repository.StoreRepository;
@@ -19,20 +19,28 @@ public class StoreService {
     private MenuRepository menuRepository;
     private ReviewRepository reviewRepository;
 
-    public List<store> getStoreByCategoryAndLocation(String category, double lat, double lon, double range) {
-        double latStart = lat - range;
-        double latEnd = lat + range;
-        double lonStart = lon - range;
-        double lonEnd = lon + range;
+    private static final double LATITUDE_VALUE = 1 / 109.958489129649955;
+    private static final double LONGITUDE_VALUE = 1 / 88.74;
+
+    public List<Store> getStoreByCategoryAndLocation(String category, double lat, double lon, double range) {
+//        double latStart = lat - range;
+//        double latEnd = lat + range;
+//        double lonStart = lon - range;
+//        double lonEnd = lon + range;
+
+        double latStart = lat - (LATITUDE_VALUE / 1000 * range);
+        double latEnd = lat + (LATITUDE_VALUE / 1000 * range);
+        double lonStart = lon - (LONGITUDE_VALUE / 1000 * range);
+        double lonEnd = lon + (LONGITUDE_VALUE / 1000 * range);
 
         return storeRepository.findByCategoryAndLatitudeBetweenAndLongitudeBetween(category, latStart, latEnd, lonStart, lonEnd);
     }
 
-    public List<menu> getMenuByStoreId(Long storeId) {
+    public List<Menu> getMenuByStoreId(String storeId) {
         return menuRepository.findByStoreId(storeId);
     }
 
-    public List<review> getReviewByStoreId(Long storeId) {
+    public List<Review> getReviewByStoreId(String storeId) {
         return reviewRepository.findByStoreId(storeId);
     }
 }
