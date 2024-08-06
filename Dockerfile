@@ -8,6 +8,9 @@ RUN echo "systemProp.http.proxyHost=krmp-proxy.9rum.cc\nsystemProp.http.proxyPor
 # Copy all necessary files for the build
 COPY . .
 
+RUN gradle wrapper
+
+
 # Build the application
 RUN ./gradlew build -x test
 
