@@ -33,7 +33,7 @@ public class ReviewService {
     private FileStorageUtil fileStorageUtil;
 
     // 신규 리뷰 작성 + 이미지
-    public ReviewDTO saveReview(ReviewDTO reviewDTO, MultipartFile image1, MultipartFile image2, MultipartFile image3) throws IOException, IOException {
+    public ReviewDTO saveReview(ReviewDTO reviewDTO, MultipartFile image1, MultipartFile image2, MultipartFile image3) throws IOException {
         Long userId = reviewDTO.getUser_id();
         String storeId = reviewDTO.getStore_id();
 
@@ -48,6 +48,7 @@ public class ReviewService {
                 .store(store)
                 .content(reviewDTO.getContent())
                 .grade(reviewDTO.getGrade())
+
                 .created_at(LocalDateTime.now())
                 .updated_at(LocalDateTime.now())
                 .build();
@@ -84,9 +85,9 @@ public class ReviewService {
 
     }
 
-
     // 리뷰 조회
     public Optional<ReviewDTO> getReviewById(Long id) {
+
         return reviewRepository.findById(id).map(review -> ReviewDTO.builder()
                 .id(review.getId())
                 .user_id(review.getUser().getId())
@@ -126,6 +127,21 @@ public class ReviewService {
 
         review = reviewRepository.save(review);
 
+        return mapToDTO(review);
+    }
+
+
+    public List<Review> getAllReviews() {
+        return reviewRepository.findAll();
+    }
+
+    // 이미지 파일을 바이트 배열로 변환하거나 null을 반환하는 헬퍼 메서드
+    private byte[] getBytesOrNull(MultipartFile file) throws IOException {
+        return (file != null && !file.isEmpty()) ? file.getBytes() : null;
+    }
+
+    // Review 엔티티를 ReviewDTO로 변환하는 헬퍼 메서드
+    private ReviewDTO mapToDTO(Review review) {
         return ReviewDTO.builder()
                 .id(review.getId())
                 .user_id(review.getUser().getId())
@@ -140,10 +156,9 @@ public class ReviewService {
                 .build();
     }
 
+
     // 리뷰 삭제
     public void deleteReview(Long id) {
         reviewRepository.deleteById(id);
     }
-
-
 }
