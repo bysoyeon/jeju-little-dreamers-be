@@ -45,11 +45,11 @@ public class ReviewController {
     }
 
     // 리뷰 조회 (업체별)
-    @GetMapping
-    public ResponseEntity<List<Review>> getAllReviews() {
-        List<Review> reviews = reviewService.getAllReviews();
-        return new ResponseEntity<>(reviews, HttpStatus.OK);
-    }
+//    @GetMapping
+//    public ResponseEntity<List<Review>> getAllReviews() {
+//        List<Review> reviews = reviewService.getAllReviews();
+//        return new ResponseEntity<>(reviews, HttpStatus.OK);
+//    }
 
     // 특정 리뷰 조회
     @GetMapping("/{id}")
