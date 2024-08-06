@@ -29,7 +29,19 @@ public class Review {
 
     private int grade;
     private String content;
-    private String image;//이미지 모르겟어여
+
+    @Lob
+    @Column(name = "image1", columnDefinition = "BLOB")
+    private byte[] image1;
+
+    @Lob
+    @Column(name = "image2", columnDefinition = "BLOB")
+    private byte[] image2;
+
+    @Lob
+    @Column(name = "image3", columnDefinition = "BLOB")
+    private byte[] image3;
+
     private LocalDateTime created_at;
     private LocalDateTime updated_at;
     private LocalDateTime deleted_at;
@@ -37,12 +49,15 @@ public class Review {
     public ReviewDTO toResponseDTO() {
         return ReviewDTO.builder()
                 .id(this.id)
+                .store_id(this.store.getId())
+                .store_name(this.store.getName())
                 .user_id(this.user.getId())
                 .user_nickname(this.user.getNickname())
-                .store_id(this.store.getId())
                 .grade(this.grade)
                 .content(this.content)
-                .image(this.image)
+                .image1(this.image1)
+                .image2(this.image2)
+                .image3(this.image3)
                 .updated_at(this.updated_at)
                 .build();
     }

@@ -11,7 +11,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nickname;
+
     private String profile_image;
+
+    public void setId(long l) {
+    }
 
     // Getters and setters
 }
