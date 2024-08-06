@@ -1,10 +1,10 @@
 package samdasu.jejuddai.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import samdasu.jejuddai.entity.menu;
+import samdasu.jejuddai.entity.Menu;
 
 import java.util.List;
 
-public interface MenuRepository extends JpaRepository<menu, Long> {
-    List<menu> findByStoreId(Long storeId);
+public interface MenuRepository extends JpaRepository<Menu, String> {
+    List<Menu> findByStoreId(String storeId);
 }

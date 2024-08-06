@@ -1,19 +1,16 @@
 package samdasu.jejuddai.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
-import samdasu.jejuddai.dto.ReviewResponseDTO;
 import samdasu.jejuddai.dto.StoreResponseDTO;
 
 @Entity
 @Getter
-public class store {
+@Table(name = "store")
+public class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
     private String name;
     private String address;
     private String phone;
