@@ -2,6 +2,7 @@ package samdasu.jejuddai.dto;
 
 import lombok.Builder;
 import lombok.Data;
+import org.antlr.v4.runtime.misc.NotNull;
 
 @Data
 @Builder

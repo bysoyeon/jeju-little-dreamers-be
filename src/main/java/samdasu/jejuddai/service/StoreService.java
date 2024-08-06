@@ -2,7 +2,11 @@ package samdasu.jejuddai.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import samdasu.jejuddai.entity.menu;
+import samdasu.jejuddai.entity.review;
 import samdasu.jejuddai.entity.store;
+import samdasu.jejuddai.repository.MenuRepository;
+import samdasu.jejuddai.repository.ReviewRepository;
 import samdasu.jejuddai.repository.StoreRepository;
 
 import java.util.List;
@@ -12,8 +16,10 @@ public class StoreService {
 
     @Autowired
     private StoreRepository storeRepository;
+    private MenuRepository menuRepository;
+    private ReviewRepository reviewRepository;
 
-    public List<store> getStoreByCategoryAndLocation(String category, double lat, double lon, double range){
+    public List<store> getStoreByCategoryAndLocation(String category, double lat, double lon, double range) {
         double latStart = lat - range;
         double latEnd = lat + range;
         double lonStart = lon - range;
@@ -22,5 +28,11 @@ public class StoreService {
         return storeRepository.findByCategoryAndLatitudeBetweenAndLongitudeBetween(category, latStart, latEnd, lonStart, lonEnd);
     }
 
+    public List<menu> getMenuByStoreId(Long storeId) {
+        return menuRepository.findByStoreId(storeId);
+    }
 
+    public List<review> getReviewByStoreId(Long storeId) {
+        return reviewRepository.findByStoreId(storeId);
+    }
 }

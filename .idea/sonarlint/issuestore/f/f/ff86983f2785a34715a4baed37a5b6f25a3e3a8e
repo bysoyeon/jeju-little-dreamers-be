@@ -1,7 +1,6 @@
 
-”	java:S116"RRename this field "user_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µÊÂª8¿½Ö©’2J$e85d6a38-0393-48a9-8005-005f4b18082e
-Ÿ	java:S116"XRename this field "user_nickname" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´ë´ıÿÿÿÿ8¯ÉÜ©’2J$47634b73-b094-4bd4-a0f1-b38694be0755
-š	java:S116"SRename this field "store_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯¥Ñ¢ÿÿÿÿÿ8ûáÔ©’2J$66f3cc2a-8368-4e84-96ad-2a5979af6d86
-—	java:S116"URename this field "store_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æâ‹ÿ8½¶ß©’2J$b1d83e39-c191-4663-9a40-94c25f306399
-œ	java:S116"URename this field "created_at" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(å†íûÿÿÿÿ8…Ô©’2J$ff67cc09-298b-4c6e-baa4-212ace8eb555
-œ	java:S116"URename this field "updated_at" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•°Öüÿÿÿÿ8…Ô©’2J$c8b89af0-eb35-48cb-9ada-a4feb8e2ab6f
+”	java:S116"RRename this field "user_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µÊÂª8¿½Ö©’2J$61326919-88f9-4298-8753-2d29a1a808ed
+Ÿ	java:S116"XRename this field "user_nickname" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´ë´ıÿÿÿÿ8¯ÉÜ©’2J$94dc0eed-83ba-4cc2-bb8d-302b9317f459
+š	java:S116"SRename this field "store_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯¥Ñ¢ÿÿÿÿÿ8ûáÔ©’2J$f0163672-864d-44a0-aaf0-b68140c3f7e6
+—	java:S116"URename this field "store_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æâ‹ÿ8½¶ß©’2J$046df740-6ba8-41e9-b059-60a4d78257b4
+œ	java:S116"URename this field "updated_at" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•°Öüÿÿÿÿ8…Ô©’2J$2117a290-d2d3-45dd-a015-476247f5910f
