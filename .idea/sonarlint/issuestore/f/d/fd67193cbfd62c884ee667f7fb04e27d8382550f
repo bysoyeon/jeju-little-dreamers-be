@@ -1,6 +1,7 @@
 
-“	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(û¿¡¥8¼ã§«’2J$5a162444-8a70-451d-a2b2-a8f81f09f607
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8—ñ¦«’2J$2a5295b6-d5c4-4eeb-9fb5-96db346032e8
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8œÊ¾°’2J$164c521b-b450-43da-8393-87e840942c41
 z
-java:S1135$"2Complete the task associated to this TODO comment.(‹¿»ıÿÿÿÿ8Ÿñ¦«’2J$3f6b7fef-df47-47ac-a4f6-954dd74c52bd
+java:S1135"2Complete the task associated to this TODO comment.(–úõšşÿÿÿÿ8ÖÏÇ°’2J$084eeb77-8ee6-4551-b60d-fa8deed9a841
+t
+java:S1135"2Complete the task associated to this TODO comment.(ÎşÜW8ÉÔÅ°’2J$bf691f4b-7d1b-4ec5-8983-5859fb9fb5a8

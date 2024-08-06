@@ -1,0 +1,15 @@
+
+¡	java:S116"_Rename this field "KAUTH_TOKEN_URL_HOST" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÙŞ©’8Ö‘³’2J$ebf76552-d87c-482f-b7f1-d14a242d5019
+¥	java:S116"^Rename this field "KAUTH_USER_URL_HOST" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½°Äúÿÿÿÿ8×‘³’2J$e0b0e20e-c0b5-449b-806a-80139a692668
+z
+java:S1135."2Complete the task associated to this TODO comment.(ÆÇñ±ûÿÿÿÿ8Ş‘³’2J$aacaf769-89df-4b79-9181-689517ef4868
+•
+java:S1612/"MReplace this lambda with method reference 'HttpStatusCode::is4xxClientError'.(ÔÏúÿÿÿÿ8ÂŠ ³’2J$52da5dfb-5365-4751-acc3-41705c626697
+
+java:S16120"MReplace this lambda with method reference 'HttpStatusCode::is5xxServerError'.(ˆÈ¿„8èú ³’2J$720a9e4d-0944-41d5-ae13-ee952a3ee82a
+z
+java:S1135H"2Complete the task associated to this TODO comment.(ÆÇñ±ûÿÿÿÿ8ÌÌ»³’2J$eedc03ac-c292-4fac-91a8-2fa434a179ec
+•
+java:S1612I"MReplace this lambda with method reference 'HttpStatusCode::is4xxClientError'.(ÔÏúÿÿÿÿ8õ”¼³’2J$0e485cfb-4cc2-432e-a965-c3abbcf07962
+
+java:S1612J"MReplace this lambda with method reference 'HttpStatusCode::is5xxServerError'.(ˆÈ¿„8ö”¼³’2J$34932387-8101-428a-8291-8eb9dd35f10a

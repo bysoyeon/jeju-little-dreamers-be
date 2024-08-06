@@ -1,3 +1,5 @@
 
-…
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8»î´ª’2J$e2101080-10c2-45a3-a8df-817a7034dc39
+_
+java:S2094"BRemove this empty class, write its code or make it an "interface".(èáŸÉ8‚Öê±’2
+l
+java:S1128"ORemove this unused import 'org.springframework.web.bind.annotation.GetMapping'.(‡¡‰Ø8ŽÖê±’2
