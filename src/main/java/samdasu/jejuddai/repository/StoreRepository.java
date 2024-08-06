@@ -6,6 +6,8 @@ import samdasu.jejuddai.entity.Store;
 import java.util.List;
 
 public interface StoreRepository extends JpaRepository<Store, String> {
-    List<Store> findByCategoryAndLatitudeBetweenAndLongitudeBetween(String category, double latStart, double latEnd, double lonStart, double lonEnd);
+//    List<Store> findByCategoryAndLatitudeBetweenAndLongitudeBetween(String category, double latStart, double latEnd, double lonStart, double lonEnd);
 
+    //테스트용
+    List<Store> LatitudeBetweenAndLongitudeBetween(double latStart, double latEnd, double lonStart, double lonEnd);
 }

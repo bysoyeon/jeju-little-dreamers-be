@@ -26,7 +26,7 @@ public class StoreController {
         @RequestParam double latitude,
         @RequestParam double longitude,
         @RequestParam double range) {
-        return storeService.getStoreByCategoryAndLocation(category, latitude, longitude, range);
+        return storeService.getStoreByCategoryAndLocation(latitude, longitude, range);
     }
 
     // 스토어 메뉴 정보 전달

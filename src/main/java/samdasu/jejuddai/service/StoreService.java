@@ -22,7 +22,7 @@ public class StoreService {
     private static final double LATITUDE_VALUE = 1 / 109.958489129649955;
     private static final double LONGITUDE_VALUE = 1 / 88.74;
 
-    public List<Store> getStoreByCategoryAndLocation(String category, double lat, double lon, double range) {
+    public List<Store> getStoreByCategoryAndLocation(double lat, double lon, double range) {
 //        double latStart = lat - range;
 //        double latEnd = lat + range;
 //        double lonStart = lon - range;
@@ -33,7 +33,9 @@ public class StoreService {
         double lonStart = lon - (LONGITUDE_VALUE / 1000 * range);
         double lonEnd = lon + (LONGITUDE_VALUE / 1000 * range);
 
-        return storeRepository.findByCategoryAndLatitudeBetweenAndLongitudeBetween(category, latStart, latEnd, lonStart, lonEnd);
+//        return storeRepository.findByCategoryAndLatitudeBetweenAndLongitudeBetween(category, latStart, latEnd, lonStart, lonEnd);
+        //테스트용
+        return storeRepository.LatitudeBetweenAndLongitudeBetween(latStart, latEnd, lonStart, lonEnd);
     }
 
     public List<Menu> getMenuByStoreId(String storeId) {
