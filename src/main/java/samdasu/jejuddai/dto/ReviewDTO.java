@@ -1,12 +1,13 @@
 package samdasu.jejuddai.dto;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class ReviewDTO {
     private Long id;
     private Long user_id; // 유저 id (작성자)
@@ -15,6 +16,9 @@ public class ReviewDTO {
     private String store_name; // 가게명
     private int grade; // 등급
     private String content; // 리뷰 내용
-    private String image;// 리뷰 이미지
+    private byte[] image1; // 리뷰 이미지1
+    private byte[] image2; // 리뷰 이미지2
+    private byte[] image3; // 리뷰 이미지3
+    private LocalDateTime created_at; // 최초 작성 날짜
     private LocalDateTime updated_at; // 최근 수정 날짜
 }
