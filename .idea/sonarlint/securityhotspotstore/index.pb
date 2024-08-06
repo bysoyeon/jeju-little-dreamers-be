@@ -367,24 +367,6 @@ Q.idea/sonarlint/securityhotspotstore/4/d/4dd5baf0bb92dcd28288a186d0b149afdbcbdc
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-m
-=src/main/java/samdasu/jejuddai/controller/UserController.java,c/5/c5159afb59a65f440c13a23258b572bcbe43ea9f
-h
-8src/main/java/samdasu/jejuddai/entity/LoginResponse.java,0/e/0ef1097e15e1fea8057480f9affb3bd745d91a59
-h
-8src/main/java/samdasu/jejuddai/service/KakaoService.java,e/d/ed63e3e5594cc8143c7c6466aa121810df1b7e4e
-e
-5src/main/java/samdasu/jejuddai/dto/LoginResponse.java,1/e/1e1451c029c1a2d4ba124d7d01c8a1a3ae7bb193
-c
-3src/main/java/samdasu/jejuddai/Auth/AuthTokens.java,5/3/5375e6fe834a3a9161a7cf170d8aa4c9b89037c0
-n
->src/main/java/samdasu/jejuddai/controller/OauthController.java,5/d/5d616e9c912d6cb217fa6427a2d5f223fbe1b5a7
-f
-6src/main/java/samdasu/jejuddai/config/OauthConfig.java,3/b/3bed331a5ad1de0df4ba1685a88324056a4bf6eb
-i
-9src/main/java/samdasu/jejuddai/config/SecurityConfig.java,7/5/75b95f1b32eec98113e6d517311ea37930be785a
-Å
-Q.idea/sonarlint/securityhotspotstore/7/5/75b95f1b32eec98113e6d517311ea37930be785a,d/0/d047da5d863528c1340c21bdd1bf259c0982c78e
 Å
 Q.idea/sonarlint/securityhotspotstore/d/0/d047da5d863528c1340c21bdd1bf259c0982c78e,f/c/fcadd247df6b1a4edec9e839dcce4c53b5e37104
 w
