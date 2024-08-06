@@ -32,6 +32,5 @@ public class StoreController {
     ) {
         return storeService.getStoreDetails(store_id);
     }
-
     //TODO: 수정해야함.
 }

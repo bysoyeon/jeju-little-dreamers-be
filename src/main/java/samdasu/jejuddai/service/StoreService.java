@@ -22,7 +22,5 @@ public class StoreService {
         return storeRepository.findByCategoryAndLatitudeBetweenAndLongitudeBetween(category, latStart, latEnd, lonStart, lonEnd);
     }
 
-    public store getStoreDetails(int store_id) {
-        return storeRepository
-    }
+
 }
