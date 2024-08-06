@@ -15,7 +15,7 @@ COPY . .
 
 RUN gradle wrapper
 
-
+RUN ./gradlew build -x test
 # Expose port 8080
 EXPOSE 8080
 
