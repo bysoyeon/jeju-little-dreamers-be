@@ -22,22 +22,22 @@ public class StoreController {
     // 위치 기반 스토어 정보 전달
     @GetMapping("/search")
     public List<Store> getStoresByCategoryAndLocation(
-        @RequestParam String category,
-        @RequestParam double latitude,
-        @RequestParam double longitude,
-        @RequestParam double range) {
+        @RequestParam(value = "category") String category,
+        @RequestParam(value = "latitude") double latitude,
+        @RequestParam(value = "longitude") double longitude,
+        @RequestParam(value = "range") double range) {
         return storeService.getStoreByCategoryAndLocation(category, latitude, longitude, range);
     }
 
     // 스토어 메뉴 정보 전달
     @GetMapping("/menu")
-    public List<Menu> getMenusByStoreId(@RequestParam String storeId) {
+    public List<Menu> getMenusByStoreId(@RequestParam(value = "storeId") String storeId) {
         return storeService.getMenuByStoreId(storeId);
     }
 
     // 스토어 리뷰 정보 전달
     @GetMapping("/review")
-    public List<Review> getReviewsByStoreId(@RequestParam String storeId) {
+    public List<Review> getReviewsByStoreId(@RequestParam(value = "storeId") String storeId) {
         return storeService.getReviewByStoreId(storeId);
     }
 
