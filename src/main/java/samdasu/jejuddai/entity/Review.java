@@ -30,17 +30,9 @@ public class Review {
     private int grade;
     private String content;
 
-    @Lob
-    @Column(name = "image1", columnDefinition = "BLOB")
-    private byte[] image1;
-
-    @Lob
-    @Column(name = "image2", columnDefinition = "BLOB")
-    private byte[] image2;
-
-    @Lob
-    @Column(name = "image3", columnDefinition = "BLOB")
-    private byte[] image3;
+    private String imageUrl1;
+    private String imageUrl2;
+    private String imageUrl3;
 
     private LocalDateTime created_at;
     private LocalDateTime updated_at;
@@ -55,9 +47,9 @@ public class Review {
                 .user_nickname(this.user.getNickname())
                 .grade(this.grade)
                 .content(this.content)
-                .image1(this.image1)
-                .image2(this.image2)
-                .image3(this.image3)
+                .imageUrl1(this.imageUrl1)
+                .imageUrl2(this.imageUrl2)
+                .imageUrl3(this.imageUrl3)
                 .created_at(this.created_at)
                 .updated_at(this.updated_at)
                 .build();
