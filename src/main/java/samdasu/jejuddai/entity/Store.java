@@ -9,7 +9,7 @@ import samdasu.jejuddai.dto.StoreResponseDTO;
 @Table(name = "store")
 public class Store {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String name;
     private String address;

@@ -16,7 +16,7 @@ import samdasu.jejuddai.dto.MenuResponseDTO;
 public class Menu {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id; // 메뉴 아이디
 
     @ManyToOne

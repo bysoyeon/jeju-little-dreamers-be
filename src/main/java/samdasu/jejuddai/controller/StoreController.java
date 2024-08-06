@@ -22,10 +22,10 @@ public class StoreController {
     // 위치 기반 스토어 정보 전달
     @GetMapping("/search")
     public List<Store> getStoresByCategoryAndLocation(
-        @RequestParam String category,
-        @RequestParam double latitude,
-        @RequestParam double longitude,
-        @RequestParam double range) {
+        @RequestParam(value = "category") String category,
+        @RequestParam(value = "latitude") double latitude,
+        @RequestParam(value = "longitude") double longitude,
+        @RequestParam(value = "range") double range) {
         return storeService.getStoreByCategoryAndLocation(category, latitude, longitude, range);
     }
 
