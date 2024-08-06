@@ -20,4 +20,4 @@ RUN ./gradlew build -x test
 EXPOSE 8080
 
 # Command to run the application
-ENTRYPOINT ["java", "-jar", "/app/build/libs/jejuddai-0.0.1-SNAPSHOT"]
+ENTRYPOINT ["java", "-jar", "/app/build/libs/jejuddai-0.0.1-SNAPSHOT.jar"]
