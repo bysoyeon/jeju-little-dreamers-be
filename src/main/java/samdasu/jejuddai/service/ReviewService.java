@@ -28,9 +28,8 @@ public class ReviewService {
     @Autowired
     private ReviewRepository reviewRepository;
 
-
     // 신규 리뷰 작성 + 이미지
-    public ReviewDTO saveReview(ReviewDTO reviewDTO, MultipartFile image1, MultipartFile image2, MultipartFile image3) throws IOException, IOException {
+    public ReviewDTO saveReview(ReviewDTO reviewDTO, MultipartFile image1, MultipartFile image2, MultipartFile image3) throws IOException {
         Long userId = reviewDTO.getUser_id();
         String storeId = reviewDTO.getStore_id();
 
@@ -45,44 +44,21 @@ public class ReviewService {
                 .store(store)
                 .content(reviewDTO.getContent())
                 .grade(reviewDTO.getGrade())
-                .image1(image1 != null ? image1.getBytes() : null)
-                .image2(image2 != null ? image2.getBytes() : null)
-                .image3(image3 != null ? image3.getBytes() : null)
+                .image1(getBytesOrNull(image1))
+                .image2(getBytesOrNull(image2))
+                .image3(getBytesOrNull(image3))
                 .created_at(LocalDateTime.now())
                 .updated_at(LocalDateTime.now())
                 .build();
 
         review = reviewRepository.save(review);
 
-        return ReviewDTO.builder()
-                .id(review.getId())
-                .user_id(review.getUser().getId())
-                .store_id(review.getStore().getId().toString())
-                .content(review.getContent())
-                .grade(review.getGrade())
-                .image1(review.getImage1())
-                .image2(review.getImage2())
-                .image3(review.getImage3())
-                .created_at(review.getCreated_at())
-                .updated_at(review.getUpdated_at())
-                .build();
+        return mapToDTO(review);
     }
-
 
     // 리뷰 조회
     public Optional<ReviewDTO> getReviewById(Long id) {
-        return reviewRepository.findById(id).map(review -> ReviewDTO.builder()
-                .id(review.getId())
-                .user_id(review.getUser().getId())
-                .store_id(review.getStore().getId())
-                .content(review.getContent())
-                .grade(review.getGrade())
-                .image1(review.getImage1())
-                .image2(review.getImage2())
-                .image3(review.getImage3())
-                .created_at(review.getCreated_at())
-                .updated_at(review.getUpdated_at())
-                .build());
+        return reviewRepository.findById(id).map(this::mapToDTO);
     }
 
     // 리뷰 수정
@@ -107,6 +83,25 @@ public class ReviewService {
 
         review = reviewRepository.save(review);
 
+        return mapToDTO(review);
+    }
+
+    // 리뷰 삭제
+    public void deleteReview(Long id) {
+        reviewRepository.deleteById(id);
+    }
+
+    public List<Review> getAllReviews() {
+        return reviewRepository.findAll();
+    }
+
+    // 이미지 파일을 바이트 배열로 변환하거나 null을 반환하는 헬퍼 메서드
+    private byte[] getBytesOrNull(MultipartFile file) throws IOException {
+        return (file != null && !file.isEmpty()) ? file.getBytes() : null;
+    }
+
+    // Review 엔티티를 ReviewDTO로 변환하는 헬퍼 메서드
+    private ReviewDTO mapToDTO(Review review) {
         return ReviewDTO.builder()
                 .id(review.getId())
                 .user_id(review.getUser().getId())
@@ -120,20 +115,4 @@ public class ReviewService {
                 .updated_at(review.getUpdated_at())
                 .build();
     }
-
-    // 리뷰 삭제
-    public void deleteReview(Long id) {
-        reviewRepository.deleteById(id);
-    }
-
-    public List<Review> getAllReviews() {
-        return reviewRepository.findAll();
-    }
-
-
-
-
-
-
-
 }
