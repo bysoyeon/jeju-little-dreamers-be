@@ -11,7 +11,8 @@ COPY gradle /app/gradle
 COPY src /app/src
 
 # Build the application
-RUN ./gradlew build -x test
+RUN
+
 
 # Run stage
 FROM openjdk:17-jdk-slim
