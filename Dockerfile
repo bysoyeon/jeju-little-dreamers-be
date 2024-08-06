@@ -11,7 +11,7 @@ RUN echo "systemProp.http.proxyHost=krmp-proxy.9rum.cc\nsystemProp.http.proxyPor
 #COPY settings.gradle /app/
 #COPY gradle /app/gradle
 #COPY src /app/src
- COPY . .
+COPY . .
 
 RUN gradle wrapper
 
