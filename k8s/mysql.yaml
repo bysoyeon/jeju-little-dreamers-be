@@ -15,19 +15,16 @@ spec:
     spec:
       containers:
         - name: mysql
+          # 여러분의 mariadb image 주소를 입력해주세요.
           image: krmp-d2hub-idock.9rum.cc/goorm/mysql:8.0.39
           env:
             - name: TZ
               value: Asia/Seoul
-            - name: MYSQL_ROOT_PASSWORD
-              value: Dnjswns3428!
-            - name: MYSQL_DATABASE
-              value: samdasu
-            - name: MYSQL_USER
-              value: junpark
-            - name: MYSQL_PASSWORD
-              value: Dnjswns3428!
-            - name: MYSQL_DISABLE_UPGRADE_BACKUP
+            - name: MARIADB_ROOT_PASSWORD
+              value: root
+            - name: MARIADB_DATABASE
+              value: krampoline
+            - name: MARIADB_DISABLE_UPGRADE_BACKUP
               value: '1'
           volumeMounts:
             - mountPath: /var/lib/mysql
@@ -58,11 +55,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql
+  name: mariadb
 spec:
   type: ClusterIP
   clusterIP: None # Headless
   selector:
-    app: mysql
+    app: mariadb
   ports:
     - port: 3306
