@@ -1,0 +1,7 @@
+
+
+java:S1854"<Remove this useless assignment to local variable "userInfo".(Á„ëı8Á´¿³’2J$2d9519cf-2a99-4f3d-8a98-455d99f39b66
+n
+java:S1452"&Remove usage of generic wildcard type.(Ÿ£›èûÿÿÿÿ8…®³’2J$aa3f38d7-0a49-4b06-b9aa-f0d253fa4b51
+p
+java:S1481"-Remove this unused "userInfo" local variable.(Á„ëı8Å´¿³’2J$d8236a99-547e-4ec4-bb18-36fbfe42c08a

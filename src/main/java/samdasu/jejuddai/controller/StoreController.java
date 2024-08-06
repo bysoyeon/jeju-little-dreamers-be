@@ -22,10 +22,12 @@ public class StoreController {
     // 위치 기반 스토어 정보 전달
     @GetMapping("/search")
     public List<store> getStoresByCategoryAndLocation(
-        @RequestParam String category,
+        @RequestParam String category, //TODO: 번호로 매칭할지, string으로 할지 정하기
         @RequestParam double latitude,
         @RequestParam double longitude,
-        @RequestParam double range) {
+        @RequestParam double range //TODO: RANGE범위 백엔드에서 final로 설정해주기
+    )
+        {
         return storeService.getStoreByCategoryAndLocation(category, latitude, longitude, range);
     }
 
@@ -40,5 +42,4 @@ public class StoreController {
     public List<review> getReviewsByStoreId(@RequestParam Long storeId) {
         return storeService.getReviewByStoreId(storeId);
     }
-    //TODO: 수정해야함.
 }

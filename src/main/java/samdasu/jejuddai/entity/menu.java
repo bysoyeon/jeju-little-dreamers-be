@@ -14,7 +14,6 @@ import samdasu.jejuddai.dto.MenuResponseDTO;
 @NoArgsConstructor
 @AllArgsConstructor
 public class menu {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // 메뉴 아이디
@@ -32,7 +31,6 @@ public class menu {
                     .name(this.name) // 메뉴 이름
                     .price(this.price) // 메뉴 가격
                     .store_id(this.store.getId()) // 가게 아이디
-                    .store_name(this.store.getName()) // 가게 이름
                     .build();
     }
 }

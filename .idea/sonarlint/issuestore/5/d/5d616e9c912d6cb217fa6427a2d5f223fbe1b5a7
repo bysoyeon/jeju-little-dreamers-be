@@ -1,4 +1,6 @@
 
-d	java:S131""Add a default case to this switch.(´çš8å£÷®’2J$190be1c6-4c3a-4e5b-8a89-257ca1aada58
+d	java:S131""Add a default case to this switch.(´çš8ÚŸ¢²’2J$2b04917d-e7a4-4f33-a698-eb7457b938f1
 
-java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(´çš8æ£÷®’2J$311fb5c6-29a5-45a7-8e1c-ecc7fad091a5
+java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(´çš8ÛŸ¢²’2J$b8ca79f2-1f98-4d77-b460-bb114b1dac93
+Â
+java:S6204/"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.( Æô™øÿÿÿÿ8áŸ¢²’2J$936254d1-0ccc-4596-a483-03687d4006b3
