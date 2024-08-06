@@ -1,17 +1,24 @@
 package samdasu.jejuddai.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Table(name = "user")
+
 @Entity
+@Table(name = "user")
 @Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long kakaoId;
     private String nickname;
-    private String profile_image;
-
-    // Getters and setters
+    private String profileImageUrl;
 }
